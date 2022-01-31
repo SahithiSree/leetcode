@@ -1,3 +1,5 @@
+
+//5ms
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
@@ -15,5 +17,25 @@ public:
             }
         }
        return max;
+    }
+};
+
+**********************************************************************************
+
+//4ms
+
+
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+    int sum=INT_MIN;
+        for(int row=0;row<accounts.size();row++){
+            int curr_sum=0;
+            for(int col=0;col<accounts[row].size();col++){
+                curr_sum=curr_sum+accounts[row][col];
+                sum=max(curr_sum,sum);       
+            }
+        }
+        return sum;
     }
 };
